@@ -1,0 +1,18 @@
+.daisy{
+  transition: opacity 2s;
+}
+
+.white {
+  fill: white;
+  opacity: 1;
+
+}
+
+.black {
+    fill: black;
+    opacity: 1;
+}
+
+.dead {
+    opacity: 0;
+}
