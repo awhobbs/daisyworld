@@ -68,7 +68,7 @@ d3.interval(function() {
 
   //new daisies grow
   new_daisies = d3.range(Math.round(new_white + new_black)).map(function() {
-			return Math.random() > new_white/(new_white + new_black) ? "yellow" : "blue";
+			return Math.random() > new_white/(new_white + new_black) ? "green" : "blue";
 		})
   frac_white = frac_white * (1 + growth.white - (1-survival_rate)) + 0.001;
   frac_black = frac_black * (1 + growth.black - (1-survival_rate)) + 0.001;
