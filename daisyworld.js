@@ -7,7 +7,7 @@ var albedo_white = 0.8;
 var heat_absorp_fact = 20;
 var sb_constant = 5.669e-8; // Stefan-Boltzman Constant (idk wtf that is)
 var solar_flux_constant = 917;
-var solar_luminosity = 0.675;//+(time*(1.2/200))
+var solar_luminosity = 0.75;//+(time*(1.2/200))
 var death_rate = 0.3;
 var survival_rate = 0.7;
 var max_daisies = 300;
@@ -58,7 +58,7 @@ function update(data) {
 }
 
 d3.interval(function() {
- solar_luminosity += 1.2/200;
+ solar_luminosity += 1/400;
  console.log("Share Light: " + frac_white);
  console.log("Share Dark: " + frac_black);
  growth = daisy_change(frac_white, frac_black)
@@ -68,7 +68,7 @@ d3.interval(function() {
 
   //new daisies grow
   new_daisies = d3.range(Math.round(new_white + new_black)).map(function() {
-			return Math.random() > new_white/(new_white + new_black) ? "green" : "blue";
+			return Math.random() > new_white/(new_white + new_black) ? "yellow" : "blue";
 		})
   frac_white = frac_white * (1 + growth.white - (1-survival_rate)) + 0.001;
   frac_black = frac_black * (1 + growth.black - (1-survival_rate)) + 0.001;
